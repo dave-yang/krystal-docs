@@ -52,7 +52,7 @@ First of all, open `/config/app.php` and add this definition:
 
 Done. Now the framework knows about this service.
 
-### Step 2: Render a CAPTCHA!
+### Step 2: Render the CAPTCHA!
 
 Now you have a service which is called `captcha`and you can access it in controllers, just like another services. For example:
 
@@ -75,7 +75,7 @@ Then in templates you can render an image, like this:
 
     <img src="<?php echo $this->url('YourModule@renderAction'); ?>" />
 
-## Step 3: Validate user's answer
+### Step 3: Validate user's answer
 
 To validate an answer, you simply need to attach the CAPTCHA's service to validation rules. 
 
