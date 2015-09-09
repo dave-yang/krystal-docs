@@ -88,6 +88,8 @@ Where `captcha` and `email` are `POST` keys. If you're not sure how to use valid
 
 ## Example: Using as a standalone component
 
+In case you want to use this component as a standalone library without the framework itself, you do so like this:
+
     <?php
     
     // Include autoloader first
