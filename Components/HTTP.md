@@ -260,3 +260,58 @@ Removes a cookie by its associated key. Returns `true` if removed successfully, 
 ### has($key)
 
 Checks whether cookie exist.
+
+# HTTP Clients
+
+HTTP clients would help you to make request to third-party URLs. Typically, you'd need that when working with third-party APIs in *REST* style.
+
+## cURL
+
+    \Krystal\Http\Client\Curl
+
+That's an adapter for cURL extension. Its usage almost the same as if you were using procedural `curl_*` functions, but instead you'd use a service object. 
+
+## Available methods
+
+### init(array $options = array())
+
+Initializes the cURL. Optionally you can pass an array of options. You can learn more about options on [official page](http://php.net/manual/en/function.curl-setopt.php)
+
+### setOptions()
+
+Sets cURL options. That can be useful if you want to set options after class instantiation.
+
+### close()
+
+Closes the connection.
+
+### clone()
+
+Returns a cloned instance of current cURL instance.
+
+### getErrors()
+
+Returns an array of errors, if any.
+
+### exec()
+
+Performs a session request.
+
+### getVersion()
+
+Returns current cURL extension version.
+
+
+### Example
+
+Usage is pretty simple:
+
+    <?php
+    
+    use Krystal\Http\Client\Curl;
+    
+    $curl = new Curl(array(.....));
+    $curl->init();
+    
+    echo $curl->exec();
+
