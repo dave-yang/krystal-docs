@@ -261,6 +261,51 @@ Removes a cookie by its associated key. Returns `true` if removed successfully, 
 
 Checks whether cookie exist.
 
+# HTTP response
+
+HTTP response is represented by `response` service, which is available as a property in controllers, just like as all another services. You can use this service, if you want to controller how the response is generated.
+
+It's used like this:
+
+    public function someAction()
+    {
+        // .... do something here and finally
+        $this->response->redirect('http://example.com');
+    }
+
+Now, let's take a look at available methods:
+
+
+## download($file, $alias = null)
+
+Send a file back to user to download. The first `$file` argument is a path to be file to be sent, and the second `$alias` is an optional alias name, which overrides a base name of selected file.
+
+## setStatusCode($code)
+
+Sets HTTP status code.
+
+## redirect($url)
+
+Redirects to another URL.
+
+## enableCache($timestamp, $ttl)
+
+Enables HTTP cache. The first `$filestamp` must be a timestamp of latest modification, and the second `$ttl` defines a lifetime in seconds.
+
+## disableCache()
+
+Completely disables HTTP cache.
+
+## setContentType($type, $charset)
+
+Defines content type with its prefered charset.
+
+## setSignature($signature)
+
+Sets `HTTP X-Powered-By` signature.
+
+
+
 # HTTP Clients
 
 HTTP clients would help you to make request to third-party URLs. Typically, you'd need that when working with third-party APIs in *REST* style.
