@@ -215,3 +215,48 @@ Here's a list of methods, that detect the type of the request:
     isPatch()
     
 As you might already guessed, they all return boolean value.
+
+
+# Working with cookies
+
+There's a built-in service called `CookieBag`, you can use to work with cookies. It's a part of request service, so you can access it by calling `getCookieBag()` on it. As a best practice you should only work with cookies in controllers only, since cookies are part of the HTTP request. As an example, it might look like this:
+
+    public function someAction()
+    {
+       $cookieBag = $this->request->getCookieBag();
+       
+       if ($cookieBag->exist('foo')) {
+           $foo = $cookieBag->get('foo');
+           // ....
+       }
+    }
+
+## Available methods
+
+### isEmpty()
+
+Checks whether there's at least one cookie has been set on client's machine. Return boolean.
+
+### removeAll()
+
+Removes all available cookies.
+
+### getAll()
+
+Returns all available cookies.
+
+### set($key, $value, $ttl = 0, $path = '/', $secure = false, $httpOnly = false, $raw = false)
+
+Sets a new cookie. Its arguments are self-explanatory. The only one note, if `$ttl` is 0, that means that the cookie will be removed automatically, when user close a browser.
+
+### get($key)
+
+Returns cookie value by its associated key. If the target key doesn't exist, then `RuntimeException` will be thrown.
+
+### remove($key)
+
+Removes a cookie by its associated key. Returns `true` if removed successfully, `false` if tried to remove non-existing cookie.
+
+### has($key)
+
+Checks whether cookie exist.
