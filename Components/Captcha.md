@@ -54,7 +54,20 @@ Done. Now the framework knows about this service.
 
 ### Step 2: Render the CAPTCHA!
 
-Now you have a service which is called `captcha`and you can access it in controllers, just like another services. For example:
+Before you render the CAPTCHA, you need to declare a route that responses as a rendered CAPTCHA image. So, you can simply attach a new route in your module.
+
+    return array(
+        
+        //..
+    
+        '/site/captcha' => array(
+      	    'controller' => 'YourModule@renderAction'
+        ),
+    
+        // ...
+    )
+
+Now you have a service which is called `captcha`and you can access it in controllers, just like another services. All you have to do is to simply render an image. For example:
 
     <?php
     
@@ -75,7 +88,7 @@ Then in templates you can render an image, like this:
 
     <img src="<?php echo $this->url('YourModule@renderAction'); ?>" />
 
-### Step 3: Validate user's answer
+### Step 3: Validate entered answer
 
 To validate an answer, you simply need to attach the CAPTCHA's service to validation rules. 
 
@@ -139,4 +152,5 @@ In case you want to use this component as a standalone library without the frame
     	<button type="submit">Verify</button>
     	
     </form>
+
 
