@@ -33,6 +33,30 @@ When writing queries via raw PDO, you end up with lot of duplications. For insta
 
 As for why it's better than ORMs, this is because it doesn't hide the SQL, but helps you to build it, so you can take advantage of particular database engine when needed. Still, there are shortcut-methods, that look similar to ORM's common methods.
 
+Configuration
+=============
+
+The configuration data (typically located at `/config/app.php`) is located under `db` component. 
+
+There are several database drivers, that you can define:
+
+- mysql [required options: `host`, `dbname`, `username`, `password`]
+- postgresql [required options: `host`, `dbname`, `user`, `password`]
+- sqlite [required options: `path`]
+- sqlserver [required options: `host`, `dbname`, `username`, `password`]
+
+The configuration must contain driver name and its associated array with options. As an example, the configuration for MySQL on a local machine would look like so:
+
+    'db' => array(
+    	'mysql' => array(
+    		'host' => 'localhost',
+    		'dbname' => 'your_db_name',
+    		'username' => 'root',
+    		'password' => ''
+    	)
+    )
+
+
 Getting started
 ===============
 
