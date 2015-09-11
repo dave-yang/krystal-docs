@@ -116,4 +116,55 @@ Loads many blocks at once.
 Returns a translated string.
 
 
+# Plugin bag
+
+A view plugin is just a name with associated stylesheets and scripts. If you want to include one plugin in several places, that would lead to code duplication, since you have to write paths in those places. Plugin bag comes to the rescue! It would help you to manage asset paths.
+You can access its instance via `view` service (since its a part of view layer), by calling `getPluginBag()` method on it, that returns the `PluginBag`.
+
+Typically, plugins are defined in configuration file and included on demain in controllers.
+
+# Available methods
+
+## appendStylesheet($stlysheet)
+
+Append a stylesheet file (that must URL path).
+
+## appendStylesheets(array $stylesheets)
+
+Append many stylesheet files at once. That must an array of URL paths to them.
+
+## getStylesheets()
+
+Returns an array of defined stylesheets.
+
+## appendScript($script)
+
+Appends a script file. That must be a URL path.
+
+## appendScripts($scripts)
+
+Appends many scripts at once. That must an array of URL paths to them.
+
+## getScripts()
+
+Returns an array of defined script files.
+
+## register($collection)
+
+Registers a plugin at runtime. The `$collection` array itself must look like so:
+
+    array(
+    	'foo' => array(
+    		'scripts' => array(
+    			// ...
+    		),
+    		'stylesheets' => array(
+    			// ...
+    		)
+    	)
+    )
+
+## load(array|string $plugin)
+
+Loads a plugin or a collection of plugins.
 
