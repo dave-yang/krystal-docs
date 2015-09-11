@@ -168,3 +168,27 @@ Registers a plugin at runtime. The `$collection` array itself must look like so:
 
 Loads a plugin or a collection of plugins.
 
+# Block bag
+
+A template block (also known as partial view) represents a reusable template fragment. For example, that can be pagination block that you want to be shared with all another templates. A block is usually rendered inside templates via `loadBlock()` method, but we didn't learn how to register them before using. So let's learn that right now.
+
+Since the block bag is a part of view service, its instance can be accessed via `getBlockBag()` method on it.
+
+# Available methods
+
+## getBlockFile($name)
+
+Returns a path of registered block by its name. If it can't find it, then a `LogicException` will be thrown.
+
+## addStaticBlock($baseDir, $name)
+
+Adds a static block to the stack. In case you want all modules to share one block, this method will register that block for you.
+The first `$baseDir` argument is a path to directory where named block is stored (name shouldn't contain `phtml` extension).
+
+## setBlocksDir($dir)
+
+Defines a shared directory path where all blocks are stored.
+
+## getBlocksDir()
+
+Returns shared blocks directory.
