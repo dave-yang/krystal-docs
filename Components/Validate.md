@@ -341,7 +341,71 @@ Sometimes in your forms, you might have a `file` input that lets your users to u
 
 # Files constraints
 
-@TODO
+
+### Extension
+
+Check whether files have a valid extension.
+
+Parameters: An array of valid extension (without dots)
+
+### FilenameMaxLength
+
+Checks the legth of uploaded file names.
+
+Parameters: The optional length, which is 255 by default.
+
+### FilenameRegEx
+
+Validates file names by RegEx pattern.
+
+Parameters: The RegEx pattern
+
+### FileSize
+
+Validates whether uploaded files exceed defined allowed filesize.
+
+Parameters: The maximal allowed value, the operator to be applied when doing comparison.
+
+### FormSize
+
+Validates whether uploaded files exceed MAX_FILE_SIZE directive defined in a form.
+
+### IniSize
+
+Validates whether uploaded files exceed `upload_max_filesize` directive in `php.ini`
+
+### IsUploadedFile
+
+Validates whether uploaded files have been uploaded natively via user's form.
+
+### NotEmpty
+
+Checks whether at least file has been uploaded.
+
+### Partial
+
+Checks whether a file has been uploaded partially.
+
+### TmpDir
+
+Checks whether a file can't be uploaded due to missing temporary directory.
+
+### Type
+
+Checks whether MIME-Type of uploaded files matches to expected one.
+
+Parameters: The expected mime-type.
+
+### UploadAmount
+
+Restricts uploaded files not to exceed defined amount.
+
+Parameters: The desired amount.
+
+### WriteFail
+
+Checks whether uploaded files have written to disk successfully.
+
 
 # Validation patterns
 
