@@ -423,3 +423,54 @@ you can now write patterned rules like so:
         '...field...' => new Pattern\SomePattern()
     )
 
+In order to attach a pattern, you need to import a base namespace.
+
+    use Krystal\Validate\Pattern; // <- Add this right after namespace declaration
+
+and then you can use it like this:
+
+    'definition' => array(
+        'email' => new Pattern\Email(),
+        // ...
+    )
+
+where `Email` is just an example of built-in pattern.
+
+## Available patterns
+
+Here is a complete list of available patterns.
+
+- Address (checks whether address isn't empty)
+- Captcha (checks whether CAPTCHA is valid)
+- ClassName (checks whether class name isn't empty)
+- Content (checks whether content isn't empty)
+- Currency (checks whether currency isn't empty)
+- DateFormat (checks whether supplied date format is valid. As a first argument it accepts the format itself)
+- Description (checks whether description isn't empty)
+- Email (checks whether email isn't empty and it looks as a valid one)
+- File (append all generic constraints to a file)
+- FullText (checks whether full description isn't empty)
+- Height (check whether height is numeric and not empty)
+- ImageFile (checks whether selected file looks as valid image)
+- ImageHeight (checks whether image height is numeric and not empty)
+- ImageQuality (checks whether image quality is numeric, is not empty and its range between 1 and 100)
+- ImageWidth (checks whether image width is numeric and is not empty)
+- IntroText (checks whether introduction text isn't empty)
+- LanguageCode (checks whether language code isn't empty)
+- Login (checks whether login isn't empty)
+- Message (checks whether message isn't empty)
+- Name (checks whether name isn't empty)
+- Order (checks whether order isn't empty, is numeric and greater than 0)
+- Password (checks whether password isn't empty)
+- PasswordConfirmation (checks whether passwords are identical. As a first argument it accepts a password)
+- PerPageCount (checks whether value is numeric, isn't empty and greater than 0)
+- Phone (checks whether a value isn't empty and matches a pattern)
+- Price (checks whether a value isn't empty, is numeric and greater than 0)
+- Query (checks whether a value isn't empty and greater than 3)
+- TemplateName (checks whether a value isn't empty and contains only English letters)
+- ThemeName (the same as TemplateName, but has different messages)
+- ThumbHeight, ThumbWidth (check whether a value isn't empty and greater than 0)
+- Title (checks whether a value isn't empty)
+- Url (checks whether a value looks as URL)
+- Username (checks whether a value isn't empty and its length is between 3 and 15)
+- Width (checks whether a value isn't empty, is numeric and its greater than 1)
