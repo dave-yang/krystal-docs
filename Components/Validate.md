@@ -27,6 +27,26 @@ Let's de-construct that step by step.
 
 Now let's learn how to defile validation rules.
 
+# Configuration
+
+The configuration stored under `validator` component. It has only two options : `render` and `translate`. The `render` option a strategy for returning error messages by `getErrors()` method. Here's a list of all available renderers:
+
+## MessagesOnly
+
+Returns array of error messages.
+
+## Standard
+
+Returns an array with field names and their associated error messages.
+
+## StandardJson
+
+Does exactly what `Standard`, but converts a result-set to JSON string. 
+
+## JsonCollection
+
+Returns an array with errors `messages` and `keys`. This can be used to highlight fields that have errors on client-side.
+
 # Defining validation rules
 
 A validation rule for a field defines whether a field is optional and its collection of constraints. The `required` key specifies whether to run validation on particual field in case it's not empty. For example, when setting `requred` to `false`, the validation will be runned in case the target field isn't empty. The `rules` key defines an array with constraints and their associated options to be applied to that particular input.
