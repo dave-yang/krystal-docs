@@ -74,6 +74,10 @@ Returns current theme name.
 
 Returns a full-qualified asset path.
 
+## moduleAsset($path, $module = null, $absolute = false)
+
+Returns a full-qualified asset path of a module itself (i.e the path to its `Assets` folder). The optional second `$module` argument defined whether to use current one or permanent one.
+
 ## setLayout($layout)
 
 Sets the master template.
