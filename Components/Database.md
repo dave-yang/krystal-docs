@@ -6,12 +6,10 @@ This component provides a flexible tool to deal with SQL. It's not an ORM, but a
 Goals
 =====
 
- - Make database interactions purely via Data Mappers. Adhere to the Single-Responsibility Principle.
-   No awkward Active Records with their ugly approach on table relations and bunch of their magic stuff (gosh!)
+ - Force database interactions purely via Data Mappers. Adhere to the Single-Responsibility Principle.
+ - Make the component easy to use extend.
+ - Make API and usage as simple as possible.
 
- - Make the component easy to use extend
- - Make API and usage as simple as possible. Users should not be bothered about internals, they only have to know how to call methods!
- - Force users to encapsulate all database interactions into their mappers
 
 Features
 ========
