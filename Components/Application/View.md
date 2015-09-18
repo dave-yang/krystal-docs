@@ -70,13 +70,13 @@ Add variables to the template. That must be an array with names with their assoc
 
 Returns current theme name.
 
-## asset($path, $module = null)
+## asset($path, $module = null, $absolute = false)
 
-Returns a full-qualified asset path.
+Returns a full-qualified asset path. The optional second `$module` argument defined whether to use current one or permanent one. The third `$absolute` boolean argument defines whether to return absolute or full path.
 
 ## moduleAsset($path, $module = null, $absolute = false)
 
-Returns a full-qualified asset path of a module itself (i.e the path to its `Assets` folder). The optional second `$module` argument defined whether to use current one or permanent one.
+Returns a full-qualified asset path of a module itself (i.e the path to its `Assets` folder). The optional second `$module` argument defined whether to use current one or permanent one. The third `$absolute` boolean argument defines whether to return absolute or full path.
 
 ## setLayout($layout)
 
