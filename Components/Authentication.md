@@ -48,4 +48,15 @@ Determines whether a user is already logged in.
 
 # RBAC
 
-@TODO
+As soon as you define roles, you would want to protect some controller actions. Suppose you have a route that points to controller action which adds something to a database. In that case, you might want to allow all users that belong to "admin" group perform that action, and do forbid for the rest roles.
+
+Well, by default the RBAC protector allows everyone to perform actions. In order to disallow a particular group to perform desired controller action, you have to add `disallow` with associated route definition. That array must contain forbidden role names.
+
+For example:
+
+'/admin/some-secured-action' => array(
+	'controller' => 'SomeController@someAction',
+	'disallow' => array('reviewer')
+)
+
+So if a user with his credentials logged as "reviewer" and navigated to `/admin/some-secured-action` then he won't be allowed to do that and the inherited method `onNoRights()` will be called automatically.
