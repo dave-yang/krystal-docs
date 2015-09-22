@@ -191,3 +191,24 @@ Outputs a class with provided value, if condition is true-like.
 ### addAttrOnDemand($condition, $attr, $value)
 
 Outputs an attribute with a value, if condition is true-like.
+
+
+# Providers
+
+Providers help you to store user preferences. For example, you might want to store a user's language in a session for later usage.
+
+## Per page count
+
+    \Krystal\Form\Providers\__construct(PersistentStorageInterface $storage, $ns, $default = 3, array $values = array(3, 5, 10, 15, 20, 25))
+
+This provider helps you to store so-called *per page count* option. If you want to store data for a current session only, then as a first argument you can provide an instance of `sessionBag` service. If you want to store the data in cookies, then you'd provide an instance of `cookieBag` service.
+
+## Available methods
+
+### getPerPageCountValues()
+
+Returns an array of entities. Each entity has the following methods:
+
+`getOptions()` - returns an array of entities.
+
+@TODO
