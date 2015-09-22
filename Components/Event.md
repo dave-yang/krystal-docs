@@ -5,27 +5,39 @@ If you use events in you application, this component will help you to manage the
 
 # Available methods
 
-## attach($event, Closure $listener)
+## attach()
+
+    \Krystal\Event\EventManager::attach($event, Closure $listener)
 
 Attaches a listener (callable function) to an event.
 
-## detach($event)
+## detach()
+
+    \Krystal\Event\EventManager::detach($event)
 
 Detaches an event. In case an event wasn't registered before, it'd throw `RuntimeException` indicating failure.
 
 ## detachAll()
 
-Detaches all attached events
+    \Krystal\Event\EventManager::detachAll()
 
-## trigger($event)
+Detaches all attached events.
+
+## trigger()
+
+    \Krystal\Event\EventManager::trigger($event)
 
 Triggers attached listener to an event, In case an event isn't defined, it'd throw `RuntimeException` indicating failure.
 
 ## has($event)
 
+    \Krystal\Event\EventManager::has($event)
+
 Checks whether an event is defined.
 
 ## countAll()
+
+    \Krystal\Event\EventManager::countAll()
 
 Counts amount of all attached events.
 
