@@ -866,12 +866,3 @@ Query builder can not totally abstract SQL language, especially since it might b
 To access raw PDO instance, just call `getPdo()`, like this:
 
     $pdo = $this->db->getPdo();
-
-
-@TODO
-
- - Sections in doc: Non-pk specific shortcuts, connection, relations
- * Methods in SQL\Qb for migrations
-
-
-
