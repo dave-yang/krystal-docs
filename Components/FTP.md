@@ -23,110 +23,164 @@ If you provided both username and password, it would try to login right after co
 
 # Available methods
 
-## getOption($option)
+## getOption()
 
-Retrieves various runtime behaviours of the current FTP stream
+\Krystal\Ftp\FtpManager::getOption($option)
 
-## mkdir($dirname)
+Retrieves various runtime behaviours of the current FTP stream.
 
-Creates new empty directory on the server
+## mkdir()
 
-## getRawList($recursive = true)
+\Krystal\Ftp\FtpManager::mkdir($dirname)
 
-Returns a detailed list of files in the given directory
+Creates new empty directory on the server.
 
-## sendCmd($cmd)
+## getRawList()
 
-Sends a command to the server
+\Krystal\Ftp\FtpManager::getRawList($recursive = true)
 
-## alloc($filesize, &$result = null)
+Returns a detailed list of files in the given directory.
 
-Allocates space for a file to be uploaded
+## sendCmd()
+
+\Krystal\Ftp\FtpManager::sendCmd($cmd)
+
+Sends a command to the server.
+
+## alloc()
+
+\Krystal\Ftp\FtpManager::alloc($filesize, &$result = null)
+
+Allocates space for a file to be uploaded.
 
 ## cdup()
 
-Changes to the parent directory
+\Krystal\Ftp\FtpManager::cdup()
 
-## chdir($directory)
+Changes to the parent directory.
 
-Changes the current directory to the specified one
+## chdir()
+
+\Krystal\Ftp\FtpManager::chdir($directory)
+
+Changes the current directory to the specified one.
 
 ## getSystemType()
 
-Returns the system type identifier of the remote FTP server
+\Krystal\Ftp\FtpManager::getSystemType()
 
-## chmod($filename, $mode = 0777)
+Returns the system type identifier of the remote FTP server.
 
-Set permissions on a file via FTP
+## chmod()
 
-## delete($path)
+\Krystal\Ftp\FtpManager::chmod($filename, $mode = 0777)
 
-Deletes a file on the FTP server
+Set permissions on a file via FTP.
 
-## exec($command)
+## delete()
 
-Requests execution of a command on the FTP server
+\Krystal\Ftp\FtpManager::delete($path)
 
-## fget($handle, $remoteFile, $mode, $resumepos = 0)
+Deletes a file on the FTP server.
 
-Downloads a file from the FTP server and saves to an open file
+## exec()
 
-## fput($handle, $remoteFile, $mode, $resumepos = 0)
+\Krystal\Ftp\FtpManager::exec($command)
 
-Uploads from an open file to the FTP server
+Requests execution of a command on the FTP server.
 
-## get($localFile, $remoteFile, $mode, $resumepos = 0)
+## fget()
 
-Downloads a file from the FTP server
+\Krystal\Ftp\FtpManager::fget($handle, $remoteFile, $mode, $resumepos = 0)
 
-## mdtm($remoteFile)
+Downloads a file from the FTP server and saves to an open file.
 
-Returns the last modified time of the given file
+## fput()
 
-## rmdir($directory)
+\Krystal\Ftp\FtpManager::fput($handle, $remoteFile, $mode, $resumepos = 0)
 
-Removes a directory
+Uploads from an open file to the FTP server.
+
+## get()
+
+\Krystal\Ftp\FtpManager::get($localFile, $remoteFile, $mode, $resumepos = 0)
+
+Downloads a file from the FTP server.
+
+## mdtm()
+
+\Krystal\Ftp\FtpManager::mdtm($remoteFile)
+
+Returns the last modified time of the given file.
+
+## rmdir()
+
+\Krystal\Ftp\FtpManager::rmdir($directory)
+
+Removes a directory.
 
 ## nbcontinue()
 
-Continues retrieving/sending a file (non-blocking)
+\Krystal\Ftp\FtpManager::nbcontinue()
 
-## nbfget($handle, $remoteFile, $mode, $resumepos = 0)
+Continues retrieving/sending a file (non-blocking).
 
-Retrieves a file from the FTP server and writes it to an open file (non-blocking)
+## nbfget()
 
-## nbfput($handle, $remoteFile, $mode, $starpos = 0)
+\Krystal\Ftp\FtpManager::nbfget($handle, $remoteFile, $mode, $resumepos = 0)
 
-Stores a file from an open file to the FTP server (non-blocking)
+Retrieves a file from the FTP server and writes it to an open file (non-blocking).
 
-## nbget($localFile, $remoteFile, $mode, $resumepos = 0)
+## nbfput()
 
-Retrieves a file from the FTP server and writes it to a local file (non-blocking)
+\Krystal\Ftp\FtpManager::nbfput($handle, $remoteFile, $mode, $starpos = 0)
 
-## nbput($remoteFile, $localFile, $mode, $starpos = 0)
+Stores a file from an open file to the FTP server (non-blocking).
 
-Stores a file on the FTP server (non-blocking)
+## nbget()
 
-## nlist($directory)
+\Krystal\Ftp\FtpManager::nbget($localFile, $remoteFile, $mode, $resumepos = 0)
 
-Returns a list of files in the given directory
+Retrieves a file from the FTP server and writes it to a local file (non-blocking).
 
-## pasv($pasv)
+## nbput()
 
-Turns passive mode on or off
+\Krystal\Ftp\FtpManager::nbput($remoteFile, $localFile, $mode, $starpos = 0)
+
+Stores a file on the FTP server (non-blocking).
+
+## nlist()
+
+\Krystal\Ftp\FtpManager::nlist($directory)
+
+Returns a list of files in the given directory.
+
+## pasv()
+
+\Krystal\Ftp\FtpManager::pasv($pasv)
+
+Turns passive mode on or off.
 
 ## pwd()
 
-Returns the current directory name
+\Krystal\Ftp\FtpManager::pwd()
 
-## rename($oldName, $newName)
+Returns the current directory name.
 
-Renames a file or a directory on the FTP server
+## rename()
 
-## site($command)
+\Krystal\Ftp\FtpManager::rename($oldName, $newName)
 
-Sends a SITE command to the server
+Renames a file or a directory on the FTP server.
 
-## size($remoteFile)
+## site()
 
-Returns the size of the given file
+\Krystal\Ftp\FtpManager::site($command)
+
+Sends a SITE command to the server.
+
+## size()
+
+\Krystal\Ftp\FtpManager::size($remoteFile)
+
+Returns the size of the given file.
