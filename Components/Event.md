@@ -9,7 +9,7 @@ If you use events in you application, this component will help you to manage the
 
     \Krystal\Event\EventManager::attach($event, Closure $listener)
 
-Attaches a listener (callable function) to an event.
+Attaches a listener (callable function) to an event. The first `$event` defines event name and the second `$closure` must be a function to be invoked when calling the event which is being defined.
 
 ## detach()
 
