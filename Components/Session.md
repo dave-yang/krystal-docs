@@ -23,8 +23,8 @@ And replace it with the following:
     session => array
       'handler' => 'sql',
       'options' => array(
-    	 'connection' => 'mysql',
-    	 'table' => 'sessions'
+       'connection' => 'mysql',
+       'table' => 'sessions'
        )
     )
 
@@ -70,50 +70,74 @@ To work with session data, you can access its service called `sessionBag` in con
 
 The session's service has a number of useful methods to work with a session. It's time to explore them.
 
-## set($key, $value)
+## set()
+
+\Krystal\Session\SessionBag::set($key, $value)
 
 Stores a key and its value in the session.
 
-## get($key, $default = false)
+## get()
+
+    \Krystal\Session\SessionBag::get($key, $default = false)
 
 Returns key's value from the session. In case a key doesn't exist, then default value is returned (which is `false` by default).
 
-## has($key)
+## has()
+
+    \Krystal\Session\SessionBag::has($key)
 
 Determines whether session key has been set. Returns boolean.
 
-## remove($key)
+## remove()
+
+    \Krystal\Session\SessionBag::remove($key)
 
 Removes session value by its associated key, If a key doesn't exist, then `RuntimeException` will be thrown.
 
 ## removeAll()
 
+    \Krystal\Session\SessionBag::removeAll()
+
 Removes all data from the session.
 
 ## getAll()
+
+    \Krystal\Session\SessionBag::getAll()
 
 Returns all data from the session.
 
 ## isValid()
 
+    \Krystal\Session\SessionBag::isValid()
+
 Checks if the session is valid. This test is based on IP + Browser of the current user, so it can be used to prevent session hijacks.
 
 ## regenerate()
 
+    \Krystal\Session\SessionBag::regenerate()
+
 Regenerates session id.
 
-## setName($name)
+## setName()
+
+    \Krystal\Session\SessionBag::setName($name)
 
 Defines new session name.
 
 ## getName()
 
+    \Krystal\Session\SessionBag::getName()
+
 Returns session name.
 
 ## setId()
 
+    \Krystal\Session\SessionBag::setId($id)
+
 Defines new session id.
 
 ## getId()
+
+    \Krystal\Session\SessionBag::getId()
 
 Returns unique session id.
