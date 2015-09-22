@@ -31,13 +31,17 @@ This service will help to determine a zodiacal sign of a person by provided mont
 
 That's the common usage. It accepts a month name (must be in English) as a first argument, and a day of birth as a second. As you can see there are only two common methods to work with:
 
-## is($sign)
+## is()
 
-Determines whether given sign belongs to provided date of birth
+    \Krystal\Date\Zodiacal\is($sign)
+
+Determines whether given sign belongs to provided date of birth.
 
 ## getSign()
 
-Returns a string that indicates the sign
+    \Krystal\Date\Zodiacal\getSign()
+
+Returns a string that indicates the sign.
 
 ## Complete list of extra methods
 
