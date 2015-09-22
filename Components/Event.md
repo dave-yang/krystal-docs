@@ -29,7 +29,7 @@ Detaches all attached events.
 
 Triggers attached listener to an event, In case an event isn't defined, it'd throw `RuntimeException` indicating failure.
 
-## has($event)
+## has()
 
     \Krystal\Event\EventManager::has($event)
 
