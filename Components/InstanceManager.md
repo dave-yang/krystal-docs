@@ -1,5 +1,5 @@
-
-# Instance manager
+Instance manager
+===============
 
 This component provides tools to deal with class instances. If you use it with the framework, then you probably don't need to use it at all, since its used internally by the framework.
 
@@ -17,13 +17,19 @@ On instantiation it can optionally accept an array of service instances.
 
 ### getAll()
 
+    \Krystal\InstanceManager\ServiceLocator::getAll()
+
 Returns all registered service objects with their names. Returns an array.
 
-### get($service)
+### get()
+
+    \Krystal\InstanceManager\ServiceLocator::get($service)
 
 Returns a service object by its associated name. Returns an object or throws `RuntimeException` if can't find a service by provided name.
 
-### registerArray($instances)
+### registerArray()
+
+    \Krystal\InstanceManager\ServiceLocator::registerArray($instances)
 
 Registers many pairs at once. Returns self. The `$instances`'s argument must look like this:
 
@@ -32,16 +38,21 @@ Registers many pairs at once. Returns self. The `$instances`'s argument must loo
       'bar' => $bar
     )
     
-### register($name, $instance)
+### register()
+
+    \Krystal\InstanceManager\ServiceLocator::register($name, $instance)
 
 Registers service object by its name. Returns self.
 
+### has()
 
-### has($service)
+    \Krystal\InstanceManager\ServiceLocator::has($service)
 
 Checks by name, whether a service has been registered before. Returns boolean value.
 
-### remove($service)
+### remove()
+
+    \Krystal\InstanceManager\ServiceLocator::remove($service)
 
 Removes a service by its name. When trying to remove non-existing service, it'd issue a notice. Returns boolean value.
 
