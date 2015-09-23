@@ -321,29 +321,43 @@ There's a built-in service called `CookieBag`, you can use to work with cookies.
 
 ### isEmpty()
 
+    \Krystal\Http\CookieBag::isEmpty()
+
 Checks whether there's at least one cookie has been set on client's machine. Return boolean.
 
 ### removeAll()
+
+    \Krystal\Http\CookieBag::removeAll()
 
 Removes all available cookies.
 
 ### getAll()
 
+    \Krystal\Http\CookieBag::getAll()
+
 Returns all available cookies.
 
-### set($key, $value, $ttl = 0, $path = '/', $secure = false, $httpOnly = false, $raw = false)
+### set()
+
+    \Krystal\Http\CookieBag::set($key, $value, $ttl = 0, $path = '/', $secure = false, $httpOnly = false, $raw = false)
 
 Sets a new cookie. Its arguments are self-explanatory. The only one note, if `$ttl` is 0, that means that the cookie will be removed automatically, when user close a browser.
 
-### get($key)
+### get()
+
+    \Krystal\Http\CookieBag::get($key)
 
 Returns cookie value by its associated key. If the target key doesn't exist, then `RuntimeException` will be thrown.
 
-### remove($key)
+### remove()
+
+    \Krystal\Http\CookieBag::remove($key)
 
 Removes a cookie by its associated key. Returns `true` if removed successfully, `false` if tried to remove non-existing cookie.
 
-### has($key)
+### has()
+
+    \Krystal\Http\CookieBag::has($key)
 
 Checks whether cookie exist.
 
