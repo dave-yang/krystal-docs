@@ -87,31 +87,44 @@ Once configuration is done, you can start using a service. The service can be ac
 
 # Available methods
 
-## increment($key, $step = 1)
+## increment()
+
+    \Krystal\Cache\CacheEngineInterface::increment($key, $step = 1)
 
 Increments a numeric key in a cache. By default the step is 1.
 
-## decrement($key, $step = 1)
+## decrement()
+
+    \Krystal\Cache\CacheEngineInterface::decrement($key, $step = 1)
 
 Decrements a numeric key in a cache. By default step is 1.
 
-## set($key, $value, $ttl)
+## set()
+
+    \Krystal\Cache\CacheEngineInterface::set($key, $value, $ttl)
 
 Stores a key in a cache. The third `$ttl` arguments defines a lifetime in seconds.
 
-## get($key, $default = false)
+## get()
+
+    \Krystal\Cache\CacheEngineInterface::get($key, $default = false)
 
 Returns an entry from a cache. If one doesn't exist, then a value of the second argument is returned, which is false by default.
 
-## remove($key)
+## remove()
+
+    \Krystal\Cache\CacheEngineInterface::remove($key)
 
 Removes an entry from a cache. If successes then returns `true`, otherwise `false`.
 
+## has()
 
-## has($key)
+    \Krystal\Cache\CacheEngineInterface::has($key)
 
 Determines whether cache key exist. Return boolean.
 
 ## getAll()
+
+    \Krystal\Cache\CacheEngineInterface::getAll()
 
 Returns all cache data.
