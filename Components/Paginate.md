@@ -111,64 +111,96 @@ Typically you would want to use these methods in view templates to build paginat
 
 ## getFirstPage()
 
-Returns first page number, which is always 1
+    \Krystal\Paginate\Paginator::getFirstPage()
+
+Returns first page number, which is always 1.
 
 ## getLastPage()
 
-Returns last page number. If we have 40 pages, the last one is 39
+    \Krystal\Paginate\Paginator::getLastPage()
 
-## getSummary($separator = '-')
+Returns last page number. If we have 40 pages, the last one is 39.
 
-Returns summary string. This typically used for displaying how many records are show on current page, i.e (1-3)
+## getSummary()
 
-## isCurrentPage($page)
+    \Krystal\Paginate\Paginator::getSummary($separator = '-')
+
+Returns summary string. This typically used for displaying how many records are show on current page, i.e (1-3).
+
+## isCurrentPage()
+
+    \Krystal\Paginate\Paginator::isCurrentPage($page)
 
 Determines whether passed number is a current page. This method typically used in view templates inside `foreach` to add some kind of `class="active"`for elements.
 
 ## hasPages()
 
+    \Krystal\Paginate\Paginator::hasPages()
+
 Determines whether there's at least one page available. Returns boolean.
 
 ## hasAdapter()
+
+    \Krystal\Paginate\Paginator::hasAdapter()
 
 Determines whether style adapter was defined in configuration. Returns boolean.
 
 ## getPageNumbers()
 
+    \Krystal\Paginate\Paginator::getPageNumbers()
+
 Returns an array of page numbers. This method is aware of style adapter, so if you defined a one in configuration, it will break-down the resulting array accordingly.
 
 ## hasNextPage()
+
+    \Krystal\Paginate\Paginator::hasNextPage()
 
 Determines whether current page has a next one. For example, if you're on 39 page and want to know if there's 40'th page, you'd use this method to determine it.
 
 ## hasPreviousPage()
 
+    \Krystal\Paginate\Paginator::hasPreviousPage()
+
 Determines whether there's a previous page, which is opposite to `hasNextPage()` you see above.
 
 ## getNextPage()
+
+    \Krystal\Paginate\Paginator::getNextPage()
 
 Returns next page number if any.
 
 ## getPreviousPage()
 
+    \Krystal\Paginate\Paginator::getPreviousPage()
+
 Returns previous page number if any.
 
 ## getCurrentPage()
 
-Returns current page number
+    \Krystal\Paginate\Paginator::getCurrentPage()
+
+Returns current page number.
 
 ## getNextPageUrl()
 
-Returns next page URL
+    \Krystal\Paginate\Paginator::getNextPageUrl()
+
+Returns next page URL.
 
 ## getPreviousPageUrl()
 
-Returns previous page URL
+    \Krystal\Paginate\Paginator::getPreviousPageUrl()
+
+Returns previous page URL.
 
 ## getItemsPerPage()
 
-Returns per page count number
+    \Krystal\Paginate\Paginator::getItemsPerPage()
+
+Returns per page count number.
 
 ## getTotalAmount()
 
-Returns total amount of records
+    \Krystal\Paginate\Paginator::getTotalAmount()
+
+Returns total amount of records.
