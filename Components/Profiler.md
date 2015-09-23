@@ -5,9 +5,13 @@ This component has only one service, which is called `$profiler` and as its name
 
 ## getTakenTime()
 
+\Krystal\Profiler\Profiler::getTakenTime()
+
 Returns taken time by the script. The returned value is approximated. Returns float.
 
 ## getMemoryUsage()
+
+\Krystal\Profiler\Profiler::getMemoryUsage()
 
 Returns used memory by the script.
 
