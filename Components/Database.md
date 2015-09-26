@@ -305,6 +305,16 @@ Will generate the following query:
 
     SELECT * FROM products ORDER BY price
 
+You can also define sorting options for particular columns like this:
+
+    $this->db->select('*')
+             ->from('products')
+             ->orderBy(array('price' => 'DESC', 'date' => 'DESC'))
+
+This will generate the following query:
+
+    SELECT * FROM products ORDER BY price DESC, date DESC
+
 # desc()
 
     \Krystal\Db\Sql\Db::desc()
