@@ -120,7 +120,11 @@ In case you want to close a tag without opening it, provide the name of it as an
 
 Adds a property. As an example, it can be `checked`, `selected` or even Angular's directive such as `ng-bing`.
 
+### addProperties()
 
+    \Krystal\Form\NodeElement::addProperties(array $properties)
+
+Adds many properties at once.
 
 ### addAttribute()
 
