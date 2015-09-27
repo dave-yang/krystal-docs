@@ -161,6 +161,11 @@ Sets a text between tags. If the second `$finalize` argument is `true`, it would
 
 Appends a child element. The child itself must be instance of `NodeElement`.
 
+### getAttribute()
+
+    \Krystal\Form\NodeElement::getAttribute($attribute, $default = false)
+
+Returns attribute value. In case the target attribute isn't defined, then the value of second argument is returned.
 
 # HTML helper
 
