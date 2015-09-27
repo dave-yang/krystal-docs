@@ -132,6 +132,12 @@ Adds many properties at once.
 
 Checks whether a property has been set. Returns boolean value.
 
+### getProperties()
+
+    \Krystal\Form\NodeElement::getProperties()
+
+Returns an array of defined properties.
+
 ### addAttribute()
 
     \Krystal\Form\NodeElement::addAttribute($key, $value)
