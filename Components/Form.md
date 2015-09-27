@@ -173,6 +173,12 @@ Returns attribute value. In case the target attribute isn't defined, then the va
 
 Checks whether an attribute has been set. Returns boolean value.
 
+### getAttributes()
+
+   \Krystal\Form\NodeElement::getAttributes()
+
+Returns an array of defined attributes and their associated values.
+
 
 # HTML helper
 
