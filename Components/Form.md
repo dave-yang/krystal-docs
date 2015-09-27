@@ -126,6 +126,12 @@ Adds a property. As an example, it can be `checked`, `selected` or even Angular'
 
 Adds many properties at once.
 
+## hasProperty()
+
+    \Krystal\Form\NodeElement::hasProperty($property)
+
+Checks whether a property has been set. Returns boolean value.
+
 ### addAttribute()
 
     \Krystal\Form\NodeElement::addAttribute($key, $value)
