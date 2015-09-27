@@ -126,7 +126,7 @@ Adds a property. As an example, it can be `checked`, `selected` or even Angular'
 
 Adds many properties at once.
 
-## hasProperty()
+### hasProperty()
 
     \Krystal\Form\NodeElement::hasProperty($property)
 
