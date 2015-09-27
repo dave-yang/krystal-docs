@@ -101,24 +101,34 @@ This will output:
 
 All methods can be chained, since internally they return `$this`, expect `render()` method.
 
-### openTag($tagName)
+### openTag()
+
+    \Krystal\Form\NodeElement::openTag($tagName)
 
 Opens a tag.
 
-### closeTag($tagName = null)
+### closeTag()
+
+    \Krystal\Form\NodeElement::closeTag($tagName = null)
 
 Closes currently opened tag. 
 In case you want to close a tag without opening it, provide the name of it as an argument - this can useful in recursive functions only.
 
-### addProperty($property)
+### addProperty()
+
+    \Krystal\Form\NodeElement::addProperty($property)
 
 Adds a property. As an example, it can be `checked`, `selected` or even Angular's directive such as `ng-bing`.
 
-### addAttribute($key, $value)
+### addAttribute()
+
+    \Krystal\Form\NodeElement::addAttribute($key, $value)
 
 Adds an attribute with its value. For example, you can set a name for the element using this method.
 
-### addAttributes($attributes)
+### addAttributes()
+
+    \Krystal\Form\NodeElement::addAttributes(array $attributes)
 
 Adds many attributes at once. You'd provided an array of arguments, that looks like so:
 
@@ -129,18 +139,25 @@ Adds many attributes at once. You'd provided an array of arguments, that looks l
 
 ### clear()
 
+    \Krystal\Form\NodeElement::clear()
+
 Clears the stack.
 
-### finalize($singular = false)
+### finalize()
+
+    \Krystal\Form\NodeElement::finalize($singular = false)
 
 Appends either `>` or `/>`. If `$singular` is `true` then it'd append `/>`, otherwise `>`. As you might already guessed, it should be called when closing tags.
 
-### setText($text, $finalize = true)
+### setText()
+
+    \Krystal\Form\NodeElement::setText($text, $finalize = true)
 
 Sets a text between tags. If the second `$finalize` argument is `true`, it would finalize currently opened tag, before setting a text. 
 
+### appendChild()
 
-### appendChild(NodeElement $node)
+    \Krystal\Form\NodeElement::appendChild(NodeElement $node)
 
 Appends a child element. The child itself must be instance of `NodeElement`.
 
