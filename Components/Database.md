@@ -468,7 +468,7 @@ They open and close brackets respectively.
     rawAnd()
     rawOr()
     
-They append `AND` and `OR` respectively. And the reason they were named with `raw` prefix is because, `and` and `or` are reserved names in PHP and cannot be to name methods.
+They append `AND` and `OR` respectively. And the reason they were named with `raw` prefix is because, `and` and `or` are reserved names in PHP and cannot be used to name methods.
 
     compare($column, $operator, $value, $filter = false)
     equals($column, $value, $filter = false)
