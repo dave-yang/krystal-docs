@@ -418,8 +418,8 @@ This call will generate the following query:
 
 # increment() & decrement()
 
-    \Krystal\Db\Sql\Db::increment($table, $column, $step = 1
-    \Krystal\Db\Sql\Db::decrement($table, $column, $step = 1
+    \Krystal\Db\Sql\Db::increment($table, $column, $step = 1)
+    \Krystal\Db\Sql\Db::decrement($table, $column, $step = 1)
 
 This is just wrappers around `update()` that do generate increment and decrement queries for columns. An example:
 
