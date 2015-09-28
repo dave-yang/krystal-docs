@@ -494,7 +494,7 @@ So let's take a peek at available methods now.
 
 # One-To-One
 
-    \Krystal\Db\Sql\asOneToOne($column, $alias, $table, $link)
+    \Krystal\Db\Sql\Db::asOneToOne($column, $alias, $table, $link)
 
 
 ### Parameters
@@ -542,7 +542,7 @@ To fetch a result-set in one call, you'd do something like this:
 
 # One-To-Many
 
-    \Krystal\Db\Sql\asOneToMany($table, $pk, $alias)
+    \Krystal\Db\Sql\Db::asOneToMany($table, $pk, $alias)
 
 ### Parameters
 
@@ -583,7 +583,7 @@ Now let's query these tables using `asOneToMany()` method:
 
 # Many-To-Many
 
-    \Krystal\Db\Sql\asManyToMany($alias, $junction, $column, $table, $pk)
+    \Krystal\Db\Sql\DB::asManyToMany($alias, $junction, $column, $table, $pk)
 
 ### Parameters
 
