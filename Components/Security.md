@@ -55,3 +55,9 @@ Currently this class provides one method to escape HTML in strings:
     \Krystal\Security\Filter::escape($string)
 
 Escapes the HTML in the string.
+
+## stripTags()
+
+    \Krystal\Security\Filter::stripTags($string, array $exceptions = array())
+
+Improved version of PHP's built-in `strip_tags()` function. It better handles malformed tags, and accepts an array of tag names as exceptions. Returns a filtered string.
