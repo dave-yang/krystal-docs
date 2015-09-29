@@ -61,3 +61,9 @@ Escapes the HTML in the string.
     \Krystal\Security\Filter::stripTags($string, array $exceptions = array())
 
 Improved version of PHP's built-in `strip_tags()` function. It better handles malformed tags, and accepts an array of tag names as exceptions. Returns a filtered string.
+
+## hasTags()
+
+    \Krystal\Security\Filter::hasTags($string, array $exceptions = array())
+
+Determines whether a string has HTML tags. If you want to ignore some tags, you can pass an array of ignored ones as a second argument. The method returns boolean value.
