@@ -468,6 +468,7 @@ Here is a complete list of available patterns.
 
 - Address (checks whether address isn't empty and hasn't HTML tags)
 - Captcha (checks whether CAPTCHA is valid)
+- Comment (checks whether a string hasn't HTML tags)
 - ClassName (checks whether class name isn't empty and hasn't HTML tags)
 - Content (checks whether content isn't empty)
 - Currency (checks whether currency isn't empty and hasn't HTML tags)
