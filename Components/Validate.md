@@ -280,6 +280,12 @@ Checks whether a value doesn't contain a character.
 
 Parameters: An array of characters or a character string to be matched against a value.
 
+### NoTags
+
+Checks whether a string hasn't HTML tags.
+
+Parameters: An optional array of allowed tag names (like `a`, `h1`, etc).
+
 ### NotEmpty
 
 Checks whether a value isn't empty.
