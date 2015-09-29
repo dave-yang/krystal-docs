@@ -50,6 +50,8 @@ Then validate it in controllers, just like as we did in previous example, but us
 
 Currently this class provides one method to escape HTML in strings:
 
-## escape($string)
+## escape()
+
+    \Krystal\Security\Filter::escape($string)
 
 Escapes the HTML in the string.
