@@ -87,7 +87,7 @@ To get started, you need to create some data mapper class, that extends `\Krysta
         }
     }
 
-As you noted, there's an instance, which is `db` that builds a query and then queries a database. Now let's take a look, what methods query build offers.
+As you noted, there's an instance, which is `db` that builds a query and then queries a database. Now let's take a look, what methods query builder offers out of the box for you.
 
 Building queries
 =============
@@ -125,7 +125,7 @@ If you pass a second argument as true, the it would append `DISTINCT` right afte
 
     \Krystal\Db\Sql\Db::from($table = null)
 
-This method specific a source to be used. It most cases that would be a table, but sometimes you might want to use several tables when bulding `UNION` queries. This method is usually gets called right after `select()`, like this:
+This method specifies a source to be selected from. It most cases that is a table name, but sometimes you might want to use several tables when building `UNION` queries when building complex queries. This method is usually gets called right after `select()`, like this:
 
     $this->db->select('*')
              ->from('some_table')
@@ -144,11 +144,11 @@ This method simply appends `WHERE` clause and usually gets called right after `f
              ->from('some_table')
              ->where('id', '=', '1')
 
-Would build a query like this;
+Will generate the following query:
 
     SELECT * FROM some_table WHERE id = '1'
 
-Lastly, there's a 4-th argument which is called `$filter`. If you set it to `true`, then `WHERE` clause is appended only case its `$value` it not empty.
+Lastly, there's a 4-th argument which is called `$filter`. If you set it to `true`, then `WHERE` clause is appended only case its `$value` is not empty.
 
 There are several shortcut methods for `where()`, that substitute operators.
 
@@ -166,7 +166,7 @@ There are several shortcut methods for `where()`, that substitute operators.
 
     \Krystal\Db\Sql\Db::andWhere($column, $operator, $value, $filter = false)
 
-This method appends `AND WHERE` fragment. It should not be used as a first `WHERE` clause, but should be used as a second. Just like this:
+This method appends `AND WHERE` fragment. It should not be used as a first `WHERE` clause, but should be used for following. Just like this:
 
     $this->db->select('*')
              ->from('users')
@@ -217,7 +217,7 @@ Just like two previous methods it has shortcut methods as well. Here they are:
 
     \Krystal\Db\Sql\Db::whereIn($column, array $values, $filter = false)
 
-This method appends `WHERE IN` fragment. It's used like this
+This method appends `WHERE IN` fragment. It's used like this:
 
     $this->db->select('*')
              ->from('products')
@@ -269,15 +269,15 @@ Will produce:
     SELECT * FROM products LIMIT 0, 10
 
 But wait!
-In most cases, you don't need to use the `limit()`  to build pagination logic. There's a built-in method, which is called `paginate()` that does all pagination tweaks and calls `limit()` internally.
+In most cases, you don't need to use the `limit()` to build pagination logic. There's a built-in method, which is called `paginate()` that does all pagination tweaks and calls `limit()` internally.
 
 # groupBy()
 
     \Krystal\Db\Sql\Db::groupBy( array|string $target)
 
-This method appends `GROUP BY` statement. As its argument it may accept either a string or an array of column names. Usually gets called right after singe or a bunch of `WHERE` statements.
+This method appends `GROUP BY` statement. As its argument it may accept either a string or an array of column names. It usually gets called right after single or a bunch of `WHERE` statements.
 
-For example, this call
+For example, this call:
 
     $this->db->select('*')
                    ->from('products')
@@ -293,7 +293,7 @@ Will generate the following query:
 
     \Krystal\Db\Sql\Db::orderBy( array|string|\Krystal\Db\Sql\RawSqlFragmentInterface $type = null )
 
-This method appends `ORDER BY` statement. As an argument it may accept an array of column names, a single column name, or an instance of `Krystal\Db\Sql\RawSqlFragmentInterface` that contains raw SQL fragment.
+This method appends `ORDER BY` statement. As an argument it may accept an array of column names or a single column name, or an instance of `Krystal\Db\Sql\RawSqlFragmentInterface` that contains raw SQL fragment.
 
 For example, this call:
 
@@ -321,8 +321,6 @@ This will generate the following query:
 
 
 This method simply appends `DESC`. Typically it's used right after `orderBy()`. 
-
-There's no `asc()` method since, it's default sorting method in almost all databases.
 
 
 # having()
@@ -395,7 +393,7 @@ This will call will generate the following query:
 
     INSERT INTO users (name, age) VALUES ('Dave', '23')
 
-There's a third argument `$ignore`, which tells the method if `IGNORE` keyword before the `INTO` should be appended or not. By default, it's false.
+There's a third argument `$ignore`, which tells the method if `IGNORE` keyword before the `INTO` should be appended or not. By default, its `false`.
 
 # update()
 
@@ -430,7 +428,7 @@ This will generate the following query:
 
     UPDATE products SET views = views + 1 WHERE id = '1'
 
-The same  signature applies to `decrement()`, but it does `-` instead of `+`, as you might already guessed.
+The same signature applies to `decrement()`, but it does `-` instead of `+`, as you might already guessed.
 
 # JOINs
 
@@ -717,8 +715,7 @@ It should be always called before `queryAll()`. So, let's see how it works in ac
                       ->paginate($page, $itemsPerPage)
                       ->queryAll();
 
-OK, now what?
-Done, that's it!
+And that's it!
 Now you can simply call `getPaginator()` on a mapper, since `paginate()` method internally tweaks paginator behind the scenes. After all you you'd pass paginator's instance to a view from a service later.
 
 # Transactions
@@ -761,7 +758,7 @@ And things like that.
 
 To reduce the amount similar queries, Krystal's database component has shortcut methods. 
 
-But wait, in order to start using them, you have to implement two methods in your mapper that would use shortcuts:
+But in order to start using them, you have to implement two methods in your mapper:
 
     string public static function getTableName()
 
@@ -871,8 +868,8 @@ Query logger can be accessed like, `$this->db->getQueryLogger()` and it has two 
 
 # Using raw PDO
 
-Query builder can not totally abstract SQL language, especially since it might be DB-vendor specific. Therefore, you might encounter scenarios where you would want to write plain SQL queries.
+Query builder can not totally abstract SQL language, especially since it might be specific to particular database engine. Therefore, you might encounter scenarios where you would want to write plain SQL queries.
 
-To access raw PDO instance, just call `getPdo()`, like this:
+To access raw PDO instance, just call `getPdo()` on database object, like this:
 
     $pdo = $this->db->getPdo();
