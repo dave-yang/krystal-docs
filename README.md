@@ -1,7 +1,7 @@
 Krystal PHP Framework
 =====================
 
-A lightweight PHP framework with focus on testability and decent APIs. It follows SOLID, SoC and known best practises in general.
+A lightweight PHP framework with focus on testability and building decent APIs. It follows SOLID, SoC and known best practices in general.
 
 Usage
 =====
