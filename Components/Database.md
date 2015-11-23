@@ -671,14 +671,14 @@ This will generate the following query:
 
 # Executing queries
 
-So far, you have learned only how to build queries. Once you've done building, your queries won't be executed in any way. 
+So far, you have learned only how to build queries. Once finish building a query, it won't be executed right away. 
 
 There are two methods, that let you execute your queries, that you built to fetch a result-set:
 
-    \Krystal\Db\Sql\Db::query($column = null)
-    \Krystal\Db\Sql\Db::queryAll($column = null)
+    \Krystal\Db\Sql\Db::query($column = null, $mode = null)
+    \Krystal\Db\Sql\Db::queryAll($column = null, $mode = null)
 
-The `query()` fetches a single row, while `queryAll()` fetches all rows. The optional argument `$column` they have is about filtering result-set (a plain array) by a key.
+The `query()` fetches a single row, while `queryAll()` fetches all rows. The optional argument `$column` the methods have is about filtering result-set (i.e the plain array returned array) by a column name. They also allow you to use a different PDO's fethcing mode, if you specify a second argument.
 
 
 And there's also one method to execute queries, that never return a result-set. Those queries are `INSERT`, `UPDATE` and `DELETE`.
@@ -716,7 +716,7 @@ It should be always called before `queryAll()`. So, let's see how it works in ac
                       ->queryAll();
 
 And that's it!
-Now you can simply call `getPaginator()` on a mapper, since `paginate()` method internally tweaks paginator behind the scenes. After all you you'd pass paginator's instance to a view from a service later.
+Now you can simply call `getPaginator()` on a mapper, since `paginate()` method internally tweaks the paginator. After all you you'd pass paginator's instance to a view from a service later.
 
 # Transactions
 
