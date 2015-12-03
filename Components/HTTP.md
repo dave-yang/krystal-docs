@@ -408,7 +408,7 @@ Completely disables HTTP cache.
 
     \Krystal\Http\Response\HttpResponse::setContentType($type, $charset)
 
-Defines content type with its prefered charset.
+Defines content type with its preferred charset.
 
 ## setSignature()
 
