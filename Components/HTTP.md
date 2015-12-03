@@ -380,7 +380,7 @@ Now, let's take a look at available methods:
 
     \Krystal\Http\Response\HttpResponse::download($file, $alias = null)
 
-Send a file back to user to download. The first `$file` argument is a path to be file to be sent, and the second `$alias` is an optional alias name, which overrides a base name of selected file.
+Send a file back to user for downloading. The first `$file` argument is a path to be file to be sent, and the second `$alias` is an optional alias name, which overrides a base name of selected file.
 
 ## setStatusCode()
 
