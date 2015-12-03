@@ -20,7 +20,7 @@ System requirements
 
 Krystal Framework requires PHP 5.3.0 or greater. Use latest PHP version whenever possible.
 
-LICENSE
+License
 =======
 
 Krystal is licensed under BSD-3.
