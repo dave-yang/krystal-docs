@@ -363,7 +363,7 @@ Checks whether cookie exist.
 
 # HTTP response
 
-HTTP response is represented by `response` service, which is available as a property in controllers. You can use this service, if you want to controll the way of response is generation.
+HTTP response is represented by `response` service, which is available as a property in controllers. You can use this service, if you want to controll the way of response generation.
 
 It's used like this:
 
