@@ -54,7 +54,7 @@ As a rule of thumb, you'd usually do that in controller actions, before renderin
 
 ## Rendering breadcrumbs
 
-Usually, the rendering is done in template layout file. The service method `getBreadcrumbs()` returns an array of breadcrumb entities, where each each entity has 4 methods: `getLink()`, `getName()` , `isActive()` and `isFirst()`. To determine whether bag is empty or not, you'd use `has()` method on it, which returns a boolean, before rendering them. As an example:
+Usually, the rendering is done in template layout file. The service method `getBreadcrumbs()` returns an array of breadcrumb entities, where each entity has 4 methods: `getLink()`, `getName()` , `isActive()` and `isFirst()`. To determine whether the bag is empty or not, you can use `has()` method on it, which returns a boolean, before rendering them. For example:
 
     <?php if ($this->getBreadcrumbBag()->has()): ?>
     
@@ -70,7 +70,7 @@ Usually, the rendering is done in template layout file. The service method `getB
     
     <?php endif; ?>
 
-A last breadcrumb is consider active. That's what exactly `isActive()` method determines.
+A last breadcrumb is considered active - that's what exactly `isActive()` method determines.
 
 ## Extra
 
