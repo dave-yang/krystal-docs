@@ -376,19 +376,27 @@ It's used like this:
 Now, let's take a look at available methods:
 
 
-## download($file, $alias = null)
+## download()
+
+    \Krystal\Http\Response\HttpResponse::download($file, $alias = null)
 
 Send a file back to user to download. The first `$file` argument is a path to be file to be sent, and the second `$alias` is an optional alias name, which overrides a base name of selected file.
 
-## setStatusCode($code)
+## setStatusCode()
+
+    \Krystal\Http\Response\HttpResponse::setStatusCode($code)
 
 Sets HTTP status code.
 
-## redirect($url)
+## redirect()
+
+    \Krystal\Http\Response\HttpResponse::redirect($url)
 
 Redirects to another URL.
 
-## enableCache($timestamp, $ttl)
+## enableCache()
+
+     \Krystal\Http\Response\HttpResponse::enableCache($timestamp, $ttl)
 
 Enables HTTP cache. The first `$filestamp` must be a timestamp of latest modification, and the second `$ttl` defines a lifetime in seconds.
 
@@ -396,11 +404,15 @@ Enables HTTP cache. The first `$filestamp` must be a timestamp of latest modific
 
 Completely disables HTTP cache.
 
-## setContentType($type, $charset)
+## setContentType()
+
+    \Krystal\Http\Response\HttpResponse::setContentType($type, $charset)
 
 Defines content type with its prefered charset.
 
-## setSignature($signature)
+## setSignature()
+
+    \Krystal\Http\Response\HttpResponse::setSignature($signature)
 
 Sets `HTTP X-Powered-By` signature.
 
