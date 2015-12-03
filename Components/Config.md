@@ -30,30 +30,44 @@ The table is not created by default. To create a table, simply run this file: `/
 
 Once you configure the component, you can use its service `config`, which is available as property in controllers.
 
-### store($module, $name, $value)
+### store()
+
+    \Krystal\Config\Sql\SqlConfigService::store($module, $name, $value)
 
 Stores a new configuration entry.
 
-### getAllByModule($module)
+### getAllByModule()
+
+     \Krystal\Config\Sql\SqlConfigService::getAllByModule($module)
 
 Returns all configuration data associated by a module.
 
-### get($module, $key, $default = false)
+### get()
+
+    \Krystal\Config\Sql\SqlConfigService::get($module, $key, $default = false)
 
 Returns a configuration value from partucular module. The 3-rd argument defines a default value to be returned in case requested one doesn't exist.
 
-### has($module, $key)
+### has()
+
+    \Krystal\Config\Sql\SqlConfigService::has($module, $key)
 
 Determines whether module has a particular key.
 
 ### removeAll()
 
+    \Krystal\Config\Sql\SqlConfigService::removeAll()
+
 Removes all confuguration data.
 
-### remove($module, $name)
+### remove()
+
+    \Krystal\Config\Sql\SqlConfigService::remove($module, $name)
 
 Removes a module's assoociated configuration key.
 
-### removeAllByModule($module)
+### removeAllByModule()
+
+    \Krystal\Config\Sql\SqlConfigService::removeAllByModule($module)
 
 Removes all configuration data associated with provided module.
