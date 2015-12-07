@@ -35,7 +35,7 @@ As a best practice, controllers must be slim. That means, they only have to know
 Routes
 ======
 
-As mentioned before, routes are defined in `getRoutes()` method in your `Module.php`.
+As mentioned before, routes are declared in `getRoutes()` method in your `Module.php`.
 
 
     <?php
@@ -102,25 +102,25 @@ If you define several variables, they will be passed as arguments exactly as in 
 
 # Triggering 404 error
 
-To trigger 404 error manually, you can simply return `false` in controller action. Once you do, then the default action will be executed. That is useful, if you want to handle call to invalid parameters.
+To trigger 404 error manually, you can return `false` in controller's action. Once you do, then the default action will be executed. That is useful, if you want to handle call to invalid parameters.
 
-For example, that might look like so:
+For example, here's a typical triggering case:
 
     public function indexAction($id)
     {
-        $id = '...do fetch some record ...';
+        $id = '... do fetch some record ...';
     
         if (!$id) {
             // If record isn't valid, then trigger 404
             return false;
         } else {
-            // Otherwise, process it somehow
+            // Otherwise, process it...
         }
     }
 
 # Controller shortcuts
 
-There are several shipped shortcut methods available in each controller.
+There are several shortcut methods available in each controller.
 
 ## redirectToRoute($route)
 
