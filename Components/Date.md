@@ -33,13 +33,13 @@ That's the common usage. It accepts a month name (must be in English) as a first
 
 ## is()
 
-    \Krystal\Date\Zodiacal\is($sign)
+    \Krystal\Date\Zodiacal::is($sign)
 
 Determines whether given sign belongs to provided date of birth.
 
 ## getSign()
 
-    \Krystal\Date\Zodiacal\getSign()
+    \Krystal\Date\Zodiacal::getSign()
 
 Returns a string that indicates the sign.
 
