@@ -430,31 +430,45 @@ That's an adapter for cURL extension. Its usage almost the same as if you were u
 
 ## Available methods
 
-### init(array $options = array())
+### init()
+
+    \Krystal\Http\Client\Curl::init(array $options = array())
 
 Initializes the cURL. Optionally you can pass an array of options. You can learn more about options on [official page](http://php.net/manual/en/function.curl-setopt.php)
 
 ### setOptions()
 
+    \Krystal\Http\Client\Curl::setOptions(array $options = array())
+
 Sets cURL options. That can be useful if you want to set options after class instantiation.
 
 ### close()
+
+    \Krystal\Http\Client\Curl::close()
 
 Closes the connection.
 
 ### clone()
 
+    \Krystal\Http\Client\Curl::clone()
+
 Returns a cloned instance of current cURL instance.
 
 ### getErrors()
+
+    \Krystal\Http\Client\Curl::getErrors()
 
 Returns an array of errors, if any.
 
 ### exec()
 
+    \Krystal\Http\Client\Curl::exec()
+
 Performs a session request.
 
 ### getVersion()
+
+    \Krystal\Http\Client\Curl::getVersion()
 
 Returns current cURL extension version.
 
