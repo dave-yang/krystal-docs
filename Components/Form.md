@@ -342,7 +342,9 @@ That's just a class with static methods, that help with various task in template
 
 ## Available methods
 
-### wrapOnDemand($condition, $tag, $content)
+### wrapOnDemand()
+
+    \Krystal\Form\HtmlHelper::wrapOnDemand($condition, $tag, $content)
 
 Wraps a content into a tag, if condition is true. If not, returns a regular text as provided. For example, if you want to wrap a text into `<em></em>` if condition is true, you'd use it like this:
 
@@ -356,28 +358,40 @@ Wraps a content into a tag, if condition is true. If not, returns a regular text
     
      ?>
 
-### makeReadOnlyOnDemand($condition)
+### makeReadOnlyOnDemand()
+
+    \Krystal\Form\HtmlHelper::makeReadOnlyOnDemand($condition)
 
 Outputs `readonly` property if condition is true-like.
 
-### selectOnDemand($condition)
+### selectOnDemand()
+
+    \Krystal\Form\HtmlHelper::selectOnDemand()
 
 Outputs `selected` property if condition is true-like.
 
-### checkOnDemand($condition)
+### checkOnDemand()
+
+    \Krystal\Form\HtmlHelper::checkOnDemand($condition)
 
 Outputs `checked` property if condition is true-like.
 
-### addOnDemand($condition, $text)
+### addOnDemand()
+
+    \Krystal\Form\HtmlHelper::addOnDemand($condition, $text)
 
 Outputs a text if condition is true-like.
 
-### addClassOnDemand($condition, $value)
+### addClassOnDemand()
+
+    \Krystal\Form\HtmlHelper::addClassOnDemand($condition, $value)
 
 Outputs a class with provided value, if condition is true-like.
 
 
-### addAttrOnDemand($condition, $attr, $value)
+### addAttrOnDemand()
+
+    \Krystal\Form\HtmlHelper::addAttrOnDemand($condition, $attr, $value)
 
 Outputs an attribute with a value, if condition is true-like.
 
