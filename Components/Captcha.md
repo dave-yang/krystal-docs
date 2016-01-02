@@ -101,18 +101,12 @@ Where `captcha` and `email` are `POST` keys. If you're not sure how to use valid
 
 ## Example: Using as a standalone component
 
-In case you want to use this component as a standalone library without the framework itself, you do so like this:
+In case you want to use this component as a standalone library without the framework itself, you can do it like this:
 
     <?php
     
-    // Include autoloader first
-    require(__DIR__.'/vendor/Krystal/Autoloader/PSR0.php');
-    
-    // Register PSR-0 autoloader
-    $psr0 = new \Krystal\Autoloader\PSR0();
-    $psr0->addDir(__DIR__ .'/vendor/');
-    $psr0->register();
-    
+    // Include Composer's autoloader
+    require('vendor/autoload.php');
     
     // Now simply, instantiate a captcha
     $captcha = \Krystal\Captcha\Standard\CaptchaFactory::build(array(
