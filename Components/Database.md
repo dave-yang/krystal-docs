@@ -866,6 +866,23 @@ Query logger can be accessed like, `$this->db->getQueryLogger()` and it has two 
 
 `getAll()` returns all executed queries, and `getCount()` returns an amount of executed queries.
 
+# Raw queries
+
+It's not a secret that it's very hard to abstract all possible SQL queries, especially for various database engines. Like most popular tools for SQL out there, Krystal abstracts only very common queries. In case you need to execute a non-trivial query, you can do so by invoking `raw()` method on `db` service object.
+
+For example:
+
+    $db = $this->db->raw('SELECT .... UNION SELECT ... WHERE `name` = :name', array(
+        // Here come bindings
+        ':name' => 'Jonh Doe'
+    ));
+
+    $data = $db->queryAll(); // For all matching rows
+    
+    $data = $db->query(); // For only first matching row
+
+In case you don't expect a result-set back, then you'd better use `$db->execute()`.
+
 # Using raw PDO
 
 Query builder can not totally abstract SQL language, especially since it might be specific to particular database engine. Therefore, you might encounter scenarios where you would want to write plain SQL queries.
