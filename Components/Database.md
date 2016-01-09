@@ -885,8 +885,6 @@ In case you don't expect a result-set back, then you'd better use `$db->execute(
 
 # Using raw PDO
 
-Query builder can not totally abstract SQL language, especially since it might be specific to particular database engine. Therefore, you might encounter scenarios where you would want to write plain SQL queries.
-
-To access raw PDO instance, just call `getPdo()` on database object, like this:
+Sometimes when using 3-rd party libraries, you might encounter a situation where they require an instance of PDO. To access a raw PDO instance, just call `getPdo()` on database object, like this:
 
     $pdo = $this->db->getPdo();
