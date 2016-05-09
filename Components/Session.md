@@ -20,7 +20,7 @@ First of all, open framework's configuration file and find a line which describe
 
 And replace it with the following:
 
-    session => array
+    'session' => array(
       'handler' => 'sql',
       'options' => array(
        'connection' => 'mysql',
