@@ -49,6 +49,74 @@ That's just a class with static methods to deal with arrays.
 
 ## Available methods
 
+
+### arrayPartition($array, $key)
+
+Drops an array into partition with equalent keys. For example, consider the following array:
+
+
+    $users = array(
+        array(
+            'name' => 'Dave',
+            'age' => 50,
+            'country' => 'USA'
+        ),
+        array(
+            'name' => 'Dereck',
+            'age' => 44,
+            'country' => 'USA'
+        ),
+        array(
+            'name' => 'William',
+            'age' => 25,
+            'country' => 'UK'
+        )
+    );
+
+There are two users that have the same `country` value. Let's drop this array into the new one by `country` key:
+
+    <?php
+    
+    use Krystal\Stdlib\ArrayUtils;
+    
+    $result = ArrayUtils::arrayPartition($users, 'country');
+    
+    print_r($result);
+
+It produces the following output:
+
+    Array
+    (
+        [USA] => Array
+            (
+                [0] => Array
+                    (
+                        [name] => Dave
+                        [age] => 50
+                        [country] => USA
+                    )
+    
+                [1] => Array
+                    (
+                        [name] => Dereck
+                        [age] => 44
+                        [country] => USA
+                    )
+    
+            )
+    
+        [UK] => Array
+            (
+                [0] => Array
+                    (
+                        [name] => William
+                        [age] => 25
+                        [country] => UK
+                    )
+    
+            )
+    )
+
 ### arrayList($array, $key, $value)
 
 Turns a row's array into a hash-like list. For example, consider this:
@@ -120,3 +188,4 @@ Determines whether an array is sequential (i.e non-associative)
 ### isAssoc($array)
 
 Determines whether an array is associative.
+
