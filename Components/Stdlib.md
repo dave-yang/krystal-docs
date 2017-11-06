@@ -117,6 +117,61 @@ It produces the following output:
             )
     )
 
+### arrayDropdown($array, $key, $partition, $key, $value)
+
+Drops an array into partitions and creates `key => value` pairs inside them. This method comes in handy, in case you need to prepare an array for `select` DOM element with nested `optgroup` tags .
+
+For example, consider the following array:
+
+    $users = array(
+        array(
+            'id' => 1,
+            'name' => 'Dave',
+            'age' => 50,
+            'country' => 'USA'
+        ),
+        array(
+            'id' => 2,
+            'name' => 'Dereck',
+            'age' => 44,
+            'country' => 'USA'
+        ),
+        array(
+            'id' => 3,
+            'name' => 'William',
+            'age' => 25,
+            'country' => 'UK'
+        )
+    );
+
+Let's make from this array a structure for dropdown-like element:
+
+    <?php
+    
+    use Krystal\Stdlib\ArrayUtils;
+    
+    $result = ArrayUtils::arrayDropdown($users, 'country', 'id', 'name');
+    
+    print_r($result);
+
+This produces the following output:
+
+    Array
+    (
+        [USA] => Array
+            (
+                [1] => Dave
+                [2] => Dereck
+            )
+    
+        [UK] => Array
+            (
+                [3] => William
+            )
+    )
+
+From initial array, we used `country` key as a partition name, and `id` with `name` as corresponding `key => value` pairs for the new array.
+
 ### arrayList($array, $key, $value)
 
 Turns a row's array into a hash-like list. For example, consider this:
@@ -188,4 +243,7 @@ Determines whether an array is sequential (i.e non-associative)
 ### isAssoc($array)
 
 Determines whether an array is associative.
+
+
+
 
