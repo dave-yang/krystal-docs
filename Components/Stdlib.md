@@ -178,28 +178,28 @@ Turns a row's array into a hash-like list. For example, consider this:
 
     <?php
     
-    use \Krystal\Stdlib\ArrayUtils;
+    use Krystal\Stdlib\ArrayUtils;
     
     $rows = array(
        array(
-          'key' => 'name',
-          'value' => 'Dave'  
+          'id' => '1',
+          'name' => 'Dave'  
       ),
       array(
-         'key' => 'name',
-         'value' => 'Jack'
+         'id' => '2',
+         'name' => 'Jack'
       )
     );
     
-    $list = ArrayUtils::arrayList($rows, 'key', 'value');
+    $list = ArrayUtils::arrayList($rows, 'id', 'name');
 
 The resulting `$list` array would look like as following:
 
-    array(
-       'name' => 'Dave',
-       'name' => 'jack'
-    );
-
+    Array
+    (
+        [1] => Dave
+        [2] => jack
+    )
 
 ### arrayWithout($array, $keys)
 
