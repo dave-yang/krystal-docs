@@ -1,2 +1,4 @@
+docs_dir: docs
+site_dir: site
 site_name: Krystal Framework
 repo_url: https://github.com/krystal-framework
