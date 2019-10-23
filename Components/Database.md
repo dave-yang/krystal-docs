@@ -673,13 +673,15 @@ This will generate the following query:
 
 So far, you have learned only how to build queries. Once finish building a query, it won't be executed right away. 
 
-There are two methods, that let you execute your queries, that you built to fetch a result-set:
+There are there methods, that let you execute your queries, that you built to fetch a result-set:
 
     \Krystal\Db\Sql\Db::query($column = null, $mode = null)
     \Krystal\Db\Sql\Db::queryAll($column = null, $mode = null)
+    \Krystal\Db\Sql\Db::queryScalar($mode = null)
 
-The `query()` fetches a single row, while `queryAll()` fetches all rows. The optional argument `$column` the methods have is about filtering result-set (i.e the plain array returned array) by a column name. They also allow you to use a different PDO's fethcing mode, if you specify a second argument.
+The `query()` fetches a single row, while `queryAll()` fetches all rows. The optional argument `$column` these methods have is about filtering a result-set (i.e the plain array returned array) by a column name. They also allow you to use a different PDO's fethcing mode, if you specify a second argument.
 
+The `queryScalar()` is used to fetch a value of a first column.
 
 And there's also one method to execute queries, that never return a result-set. Those queries are typically `INSERT`, `UPDATE` and `DELETE`.
 
