@@ -681,9 +681,9 @@ There are two methods, that let you execute your queries, that you built to fetc
 The `query()` fetches a single row, while `queryAll()` fetches all rows. The optional argument `$column` the methods have is about filtering result-set (i.e the plain array returned array) by a column name. They also allow you to use a different PDO's fethcing mode, if you specify a second argument.
 
 
-And there's also one method to execute queries, that never return a result-set. Those queries are `INSERT`, `UPDATE` and `DELETE`.
+And there's also one method to execute queries, that never return a result-set. Those queries are typically `INSERT`, `UPDATE` and `DELETE`.
 
-    \Krystal\Db\Sql\Db::execute()
+    \Krystal\Db\Sql\Db::execute($rowCount = false)
 
 Let's take a look at examples:
 
@@ -699,6 +699,14 @@ Let's take a look at examples:
              ->whereEquals('id', '1')
              ->execute(); // -> Execute the query without expecting a result-set in return
 
+    // Ex.3: Removing all non-activated users
+    $this->db->delete()
+             ->from('users')
+             ->whereEquals('activated', '0')
+             ->execute(true); // -> Execute the query returning a number of affected rows
+             
+The method `execute()` might accept an optional boolean parameter `$rowCount` that can be used to return a number of affected rows instead of returning boolean value.
+             
 # Pagination
 
     \Krystal\Db\Sql\Db::paginate($page, $itemsPerPage)
