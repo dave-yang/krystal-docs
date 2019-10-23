@@ -57,7 +57,7 @@ That will generate the following result:
 
 ### image()
 
-    \Krystal\Form\Element::reset($src, array $attributes = array())
+    \Krystal\Form\Element::image($src, array $attributes = array())
 
 Generates image element.
 
