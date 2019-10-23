@@ -679,7 +679,7 @@ There are there methods, that let you execute your queries, that you built to fe
     \Krystal\Db\Sql\Db::queryAll($column = null, $mode = null)
     \Krystal\Db\Sql\Db::queryScalar($mode = null)
 
-The `query()` fetches a single row, while `queryAll()` fetches all rows. The optional argument `$column` these methods have is about filtering a result-set (i.e the plain array returned array) by a column name. They also allow you to use a different PDO's fethcing mode, if you specify a second argument.
+The `query()` fetches a single row, while `queryAll()` fetches all rows. The optional argument `$column` these methods have is about filtering a result-set (i.e the plain array returned array) by a column name. They also allow you to use a different PDO's fetching mode, if you specify a second argument.
 
 The `queryScalar()` is used to fetch a value of a first column.
 
